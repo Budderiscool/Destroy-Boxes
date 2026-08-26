@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private PlayerMovement speed;
-
     [SerializeField] private float monsterSpeed;
     [SerializeField] private Rigidbody2D playerbody;
     [SerializeField] private Rigidbody2D enemybody;
