@@ -6,6 +6,7 @@ public class EnemyBoxSpawn : MonoBehaviour
     [SerializeField] private float maxEnemy = 10f;
     [SerializeField] private float spawnRate = 1f;
     [SerializeField] private float enemyCount;
+    [SerializeField] private GameObject enemyPrefab;
 
 
 

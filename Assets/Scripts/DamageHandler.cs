@@ -1,19 +1,18 @@
 using UnityEngine;
+
+namespace TakeDamage
+{
+
+
     public class DamageHandler : MonoBehaviour
     {
-
-        void Start()
+        public static void TakeDamageEnemy(float damage, GameObject targetBody)
         {
-
+            targetBody.GetComponent<EnemyHealth>().health -= damage;
         }
-
-        void Update()
+        public static void TakeDamagePlayer(float damage, GameObject targetBody)
         {
-
-        }
-
-        public void TakeDamage(float damage, GameObject gameobject)
-        {
-
+            targetBody.GetComponent<PlayerHealth>().health -= damage;
         }
     }
+}

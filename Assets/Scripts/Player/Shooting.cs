@@ -22,13 +22,20 @@ public class Shooting : MonoBehaviour
 
     private void Shoot()
     {
+        if (bulletPrefab == null || Player == null)
+        {
+            return;
+        }
+
         for (int i = 0; i < maxNumOfBullets; i++)
         {
             GameObject prefabClone = Instantiate(bulletPrefab, Player.transform.position, Player.transform.rotation);
         }
 
-        bulletPrefab.transform.position = Vector2.MoveTowards(bulletPrefab.transform.position, Enemy.transform.position, bulletSpeed * Time.deltaTime);
-
+        if (Enemy != null)
+        {
+            bulletPrefab.transform.position = Vector2.MoveTowards(bulletPrefab.transform.position, Enemy.transform.position, bulletSpeed * Time.deltaTime);
+        }
     }
 
 
@@ -37,7 +44,6 @@ public class Shooting : MonoBehaviour
         if (cd > 0)
         {
             cd -= Time.deltaTime;
-
         }
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && cd <= 0)
